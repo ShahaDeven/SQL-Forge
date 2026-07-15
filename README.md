@@ -11,7 +11,7 @@ Every number below comes from the *same* result-set grader that scores the produ
 ## TL;DR
 
 - **Supervised fine-tuning did nearly all the work.** The 7B went **54.5% → 74.5%** (+20.0pp),
-  closing **57% of the gap** to Claude. The 1.5B went **32.7% → 70.9%** (+38.2pp).
+  closing **54% of the 37.2pp gap** to Claude. The 1.5B went **32.7% → 70.9%** (+38.2pp).
 - **Fine-tuning taught conventions, not SQL — and cost nothing in general ability.** The base model
   already scores **82.4% on Spider** while scoring **54.5% here**: this benchmark is hard because of
   *domain conventions*, not SQL syntax. After SFT, Spider is **82.7%** — **+20pp in-domain for
