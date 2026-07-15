@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-07-12T02:08:17.012366+00:00",
+  "question_model": "claude-haiku-4-5-20251001",
+  "labeler": "claude-haiku-4-5-20251001 (direct, house-style prompt, self-healing)",
+  "consistency_check": true,
+  "total_accepted": 1373,
+  "per_tier": {
+    "simple_select": {
+      "target": 200,
+      "generated": 113,
+      "accepted": 103
+    },
+    "single_join": {
+      "target": 300,
+      "generated": 392,
+      "accepted": 300
+    },
+    "aggregation": {
+      "target": 400,
+      "generated": 533,
+      "accepted": 400
+    },
+    "multi_hop": {
+      "target": 400,
+      "generated": 640,
+      "accepted": 291
+    },
+    "window_function": {
+      "target": 400,
+      "generated": 640,
+      "accepted": 239
+    },
+    "simulation": {
+      "target": 300,
+      "generated": 480,
+      "accepted": 40
+    }
+  },
+  "reject_reasons": {
+    "consistency_no": 1063,
+    "empty_result": 152,
+    "too_many_rows": 174,
+    "house_style": 2,
+    "contamination": 1,
+    "single_null_cell": 31,
+    "failed_after_3": 2
+  },
+  "output": "D:\\Main_Python\\Projects\\AI_SQL_Agent\\sqlforge\\data\\datasets\\sft_pairs.jsonl"
+}
