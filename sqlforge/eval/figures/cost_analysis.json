@@ -1,0 +1,51 @@
+{
+  "gpu_rate_per_hour": 0.79,
+  "self_hosted": {
+    "SFT-7B (74.5%)": {
+      "queries_per_hour": 6519.591702337832,
+      "cost_per_1k_saturated": 0.12117323232323235,
+      "out_tokens": 107.10909090909091,
+      "max_queries_per_day": 156470.200856108,
+      "util_at_breakeven_pct": 1.8533118032980385
+    },
+    "SFT-1.5B (70.9%)": {
+      "queries_per_hour": 16431.535269709544,
+      "cost_per_1k_saturated": 0.04807828282828283,
+      "out_tokens": 103.49090909090908,
+      "max_queries_per_day": 394356.84647302906,
+      "util_at_breakeven_pct": 0.7353443276174303
+    }
+  },
+  "api": {
+    "claude-sonnet-5": {
+      "label": "Claude Sonnet 5",
+      "cost_per_query": 0.0065382,
+      "in": 1393.9,
+      "out": 157.1
+    },
+    "claude-sonnet-5-intro": {
+      "label": "Claude Sonnet 5 (intro)",
+      "cost_per_query": 0.0043587999999999995,
+      "in": 1393.9,
+      "out": 157.1
+    },
+    "claude-haiku-4-5": {
+      "label": "Claude Haiku 4.5",
+      "cost_per_query": 0.0013853,
+      "in": 877.8,
+      "out": 101.5
+    }
+  },
+  "break_even": {
+    "claude-sonnet-5": {
+      "label": "Claude Sonnet 5",
+      "queries_per_hour": 120.82836254626656,
+      "queries_per_day": 2899.8807011103972
+    },
+    "claude-haiku-4-5": {
+      "label": "Claude Haiku 4.5",
+      "queries_per_hour": 570.2735869486754,
+      "queries_per_day": 13686.566086768209
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_comment": "Token counts for the 55-query suite, measured — not estimated. Claude counts come from Anthropic's count_tokens endpoint on the exact prompts phase0/run_baseline.py builds (schema + house-style rules + question); output is the gold SQL tokenized by the same model (54 queries — sim_05 has no gold SQL). Qwen counts come from the Qwen2.5-Coder tokenizer on the identical prompts, and are recorded only to show the tokenizer gap: Sonnet 5 counts ~1.9x the input tokens Qwen does, so pricing the API off Qwen's numbers would understate cost by ~47%.",
+  "measured_at": "2026-07-14",
+  "n_queries_input": 55,
+  "n_queries_output": 54,
+  "models": {
+    "claude-sonnet-5": { "in": 1393.9, "out": 157.1 },
+    "claude-sonnet-5-intro": { "in": 1393.9, "out": 157.1 },
+    "claude-haiku-4-5": { "in": 877.8, "out": 101.5 },
+    "qwen2.5-coder": { "in": 743.6, "out": 107.1 }
+  }
+}

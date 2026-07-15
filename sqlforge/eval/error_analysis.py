@@ -59,6 +59,22 @@ THEME = {
                  muted="#898781", grid="#2c2c2a", palette=PALETTE_DARK),
 }
 
+def _ink_on(hex_color: str) -> str:
+    """Pick the higher-contrast label ink for a fill (WCAG relative luminance).
+
+    A single label colour per theme doesn't work: white is right on the blues/greens
+    but unreadable on yellow, and vice versa. These labels ARE the relief the palette
+    validator requires for the sub-3:1 slots, so they have to actually be legible.
+    """
+    r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
+
+    def lin(c):
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+
+    L = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+    return "#ffffff" if (1.05 / (L + 0.05)) >= ((L + 0.05) / 0.05) else "#0b0b0b"
+
+
 _BAD_CHURN = re.compile(r"churn_risk\s*(?:=|IN|in)\s*\(?\s*'(?!HIGH_RISK|MEDIUM_RISK|LOW_RISK)[^']*'")
 _OLD_REVENUE = re.compile(r"l_extendedprice|l_discount", re.IGNORECASE)
 _SCHEMA_ERR = re.compile(r"Binder Error|Catalog Error|does not have a column|not found in FROM", re.I)
@@ -129,7 +145,7 @@ def build_chart(counts, totals, mode, out_path):
         for xi, (v, b) in enumerate(zip(vals, bottoms)):
             if v > 0:
                 ax.text(xi, b + v / 2, str(v), ha="center", va="center",
-                        color="#ffffff" if mode == "light" else "#0b0b0b",
+                        color=_ink_on(t["palette"][i]),
                         fontsize=10, fontweight="600", zorder=4)
         bottoms = [b + v for b, v in zip(bottoms, vals)]
 
