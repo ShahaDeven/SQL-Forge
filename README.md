@@ -6,6 +6,9 @@ domain-specific Text-to-SQL benchmark, using SFT → DPO → GRPO with **executi
 Every number below comes from the *same* result-set grader that scores the production agent at
 91.7% — so open-model and Claude numbers are directly comparable.
 
+**Fine-tuned weights:** 🤗 [devenshah21/sqlforge-qwen7b-sft](https://huggingface.co/devenshah21/sqlforge-qwen7b-sft) ·
+**Source agent this was distilled from:** [AI_SQL_Agent](https://github.com/ShahaDeven/AI_SQL_Agent)
+
 ---
 
 ## TL;DR
